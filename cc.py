@@ -12,43 +12,43 @@ def banner():
     print '──────━━━━━━━━── ● Elige tu lado y diviértete... ○ ──━━━━━━━━──────'
     print ''
 
-def cifrar(texto, clave):
+def cifrar(palabra, clave):
 
-    textocifrado = ''
+    palabracifrada = ''
 
     for letra in texto:
         suma = abecedario.find(letra) + clave
         modulo = int(suma) % len(abecedario)
-        textocifrado = textocifrado + str(abecedario[modulo])
+        palabracifrada = palabracifrada + str(abecedario[modulo])
     
-    return textocifrado
+    return palabracifrada
 
-def descifrar(texto, clave):
+def descifrar(palabra, clave):
 
-    textodescifrado = ''
+    palabradescifrada = ''
 
     for letra in texto:
         resta = abecedario.find(letra) - clave
         modulo = int(resta) % len(abecedario)
-        textodescifrado = textodescifrado + str(abecedario[modulo])
+        palabradescifrada = palabradescifrada + str(abecedario[modulo])
     
-    return textodescifrado
+    return palabradescifrada
 
 def main():
     print ''
-    cifrado = str(raw_input('[?] Ingrese texto a cifrar: ')).lower()
+    cifrado = str(raw_input('[?] Ingrese palabra a cifrar: ')).lower()
     print ''
-    clavecifrado = int(raw_input('[?] Ingrese clave de cifrado: '))
+    clavecifrado = int(raw_input('[?] Ingrese clave numérica de cifrado: '))
     print ''
-    print '[+] Texto cifrado: ' + cifrar(cifrado, clavecifrado)
+    print '[+] Palabra cifrada: ' + cifrar(cifrado, clavecifrado)
     print ''
     print ''
     print ''
-    descifrado = str(raw_input('[?] Ingrese texto a descifrar: ')).lower()
+    descifrado = str(raw_input('[?] Ingrese palabra a descifrar: ')).lower()
     print ''
-    clavedescifrado = int(raw_input('[?] Ingrese clave de descifrado: '))
+    clavedescifrado = int(raw_input('[?] Ingrese clave numérica de descifrado: '))
     print ''
-    print '[+] Texto descifrado: ' + descifrar(descifrado, clavedescifrado)
+    print '[+] Palabra descifrada: ' + descifrar(descifrado, clavedescifrado)
 
 if __name__ == "__main__":
     banner()
